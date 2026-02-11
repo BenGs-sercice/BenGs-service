@@ -1,0 +1,230 @@
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+import {
+getAuth,
+onAuthStateChanged,
+signOut
+} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyBdo7NO1PnAa90PhEhuzpllkB1ESGZu3J8",
+authDomain: "harry-undersand.firebaseapp.com",
+projectId: "harry-undersand"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, user => {
+if (!user) {
+// Pas connecté → redirection vers page login
+window.location.href = "/";
+}
+});
+</script>
+
+</script>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Amateur De Fantaisie</title>
+
+<link rel="icon" type="image/svg+xml"
+href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⛩️</text></svg>">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  background:#0a0a0f;
+  color:#e1e1e1;
+  font-family:Inter,Arial;
+}
+
+header{
+  text-align:center;
+  padding:45px 18px;
+}
+
+h1{
+  color:#dcdcff;
+  margin:0;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:#a3a3ff;
+  text-decoration:none;
+  padding:8px 14px;
+  border-radius:6px;
+}
+
+nav a:hover{
+  background:#3d3cff;
+  color:#fff;
+}
+
+.section{
+  max-width:850px;
+  margin:30px auto;
+  padding:0 16px;
+}
+
+.intro{
+  text-align:center;
+  opacity:.85;
+  margin-bottom:30px;
+  line-height:1.6;
+}
+
+/* Cards */
+.card{
+  background:#10101c;
+  border:1px solid #222;
+  border-radius:14px;
+  padding:22px;
+  margin-bottom:18px;
+}
+
+/* Contact buttons */
+.contact-btn{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px;
+  margin-bottom:14px;
+  background:#151528;
+  border:1px solid #2a2a44;
+  border-radius:12px;
+  text-decoration:none;
+  color:#e1e1e1;
+  transition:.3s;
+}
+
+.contact-btn i{
+  font-size:1.6rem;
+  min-width:28px;
+}
+
+.contact-btn span{
+  font-weight:600;
+}
+
+.contact-btn small{
+  display:block;
+  font-size:.85rem;
+  opacity:.7;
+}
+
+.contact-btn:hover{
+  background:#7b3cff;
+  border-color:#7b3cff;
+  transform:translateY(-2px);
+}
+
+/* Platform colors */
+.whatsapp{color:#25D366}
+.facebook{color:#1877F2}
+.instagram{color:#E1306C}
+.telegram{color:#2AABEE}
+.discord{color:#7289DA}
+
+/* Footer */
+footer{
+  text-align:center;
+  margin:45px 0;
+  opacity:.6;
+  font-size:.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Contact & Réseaux</h1>
+
+  <nav>
+    <a href="index.html">🔔 Accueil</a>
+    <a href="about.html">⚙️ À propos</a>
+    <a href="services.html">⚒️ Services</a>
+  </nav>
+</header>
+
+<section class="section">
+
+  <p class="intro">
+    Une question, un projet ou une commande ?  
+    Contactez-nous directement via la plateforme de votre choix.
+  </p>
+
+  <!-- CONTACT DIRECT -->
+  <div class="card">
+    <h3>📞 Contact rapide</h3>
+
+    <a class="contact-btn" href="https://wa.me/message/MEKLQKZMEJ6EF1">
+      <i class="fab fa-whatsapp whatsapp"></i>
+      <div>
+        <span>WhatsApp</span>
+        <small>Réponse rapide • Commandes & support</small>
+      </div>
+    </a>
+
+    <a class="contact-btn" href="https://t.me/aliceiaofficiel">
+      <i class="fab fa-telegram telegram"></i>
+      <div>
+        <span>Telegram</span>
+        <small>Discussion directe • Projets techniques</small>
+      </div>
+    </a>
+  </div>
+
+  <!-- RÉSEAUX SOCIAUX -->
+  <div class="card">
+    <h3>🌐 Réseaux sociaux</h3>
+
+    <a class="contact-btn" href="https://www.facebook.com/profile.php?id=61585121305403">
+      <i class="fab fa-facebook facebook"></i>
+      <div>
+        <span>Facebook</span>
+        <small>Actualités & présence officielle</small>
+      </div>
+    </a>
+
+    <a class="contact-btn" href="https://www.instagram.com/amateurdefantaisietech">
+      <i class="fab fa-instagram instagram"></i>
+      <div>
+        <span>Instagram</span>
+        <small>Visuels • projets • communauté</small>
+      </div>
+    </a>
+
+    <a class="contact-btn" href="https://discord.gg/6raY3cPpGm">
+      <i class="fab fa-discord discord"></i>
+      <div>
+        <span>Discord</span>
+        <small>Serveur communautaire (bientôt)</small>
+      </div>
+    </a>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 — Amateur De Fantaisie by Harry Undersand
+</footer>
+
+</body>
+</html>
