@@ -86,7 +86,6 @@ footer{text-align:center;padding:3rem;color:#7a7a9a}
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
 <h1>🎬 Packs Streaming Premium</h1>
 <p>
@@ -102,13 +101,11 @@ sécurisés et accompagnés d’un support WhatsApp dédié.
 </div>
 </section>
 
-<!-- PACKS -->
 <section class="container">
 <h2>🔥 Nos Packs Disponibles</h2>
 
 <div class="grid">
 
-<!-- PACK CINÉMA -->
 <div class="card">
 <i class="fas fa-film"></i>
 <h3>Pack Cinéma</h3>
@@ -120,10 +117,9 @@ sécurisés et accompagnés d’un support WhatsApp dédié.
 <li>Activation rapide</li>
 <li>Support WhatsApp</li>
 </ul>
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20commander%20le%20Pack%20Cin%C3%A9ma%20(Netflix%20+%20Prime%20Video).">Commander</a>
+<a class="btn" href="https://wa.me/056018886?text=Bonjour%20!%20Je%20souhaite%20commander%20le%20Pack%20Cin%C3%A9ma%20(Netflix%20+%20Prime%20Video).">Commander</a>
 </div>
 
-<!-- PACK ANIME -->
 <div class="card">
 <i class="fas fa-dragon"></i>
 <h3>Pack Anime</h3>
@@ -135,10 +131,9 @@ sécurisés et accompagnés d’un support WhatsApp dédié.
 <li>Qualité HD</li>
 <li>Compatibilité mobile & TV</li>
 </ul>
-<a class="btn" href="https://wa.me/242066973413?text=Salut%20!%20Je%20veux%20le%20Pack%20Anime%20(Crunchyroll%20+%20Wakanim).">Commander</a>
+<a class="btn" href="https://wa.me/056018886?text=Salut%20!%20Je%20veux%20le%20Pack%20Anime%20(Crunchyroll%20+%20Wakanim).">Commander</a>
 </div>
 
-<!-- PACK FAMILLE -->
 <div class="card">
 <i class="fas fa-users"></i>
 <h3>Pack Famille</h3>
@@ -150,10 +145,9 @@ sécurisés et accompagnés d’un support WhatsApp dédié.
 <li>Multi-écrans</li>
 <li>Assistance dédiée</li>
 </ul>
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20le%20Pack%20Famille%20(Netflix%20+%20MyCanal).">Commander</a>
+<a class="btn" href="https://wa.me/056018886?text=Bonjour%20!%20Je%20souhaite%20le%20Pack%20Famille%20(Netflix%20+%20MyCanal).">Commander</a>
 </div>
 
-<!-- PACK ULTIME -->
 <div class="card">
 <i class="fas fa-crown"></i>
 <h3>Pack Ultime</h3>
@@ -165,13 +159,12 @@ sécurisés et accompagnés d’un support WhatsApp dédié.
 <li>Accès international</li>
 <li>Support prioritaire</li>
 </ul>
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20le%20Pack%20Ultime%20Streaming.">Commander</a>
+<a class="btn" href="https://wa.me/056018886?text=Bonjour%20!%20Je%20souhaite%20le%20Pack%20Ultime%20Streaming.">Commander</a>
 </div>
 
 </div>
 </section>
 
-<!-- CONFIANCE -->
 <section class="trust">
 <div class="container">
 <h2>🔒 Pourquoi nos packs sont fiables ?</h2>
@@ -184,65 +177,8 @@ WhatsApp réactif pour garantir une expérience fluide et sans interruption.
 </section>
 
 <footer>
-© 2026 Amateur De Fantaisie — Packs Streaming vérifiés par Harry Undersand
+© 2026 Amateur De Fantaisie — Packs Streaming vérifiés par Ben malanda
 </footer>
-
-<script>
-const observer=new IntersectionObserver(e=>{
-e.forEach(el=>{
-if(el.isIntersecting)el.target.classList.add("active");
-});
-},{threshold:0.15});
-document.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
-</script>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
-import { 
-getAuth, 
-onAuthStateChanged 
-} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
-import { 
-getFirestore, 
-collection, 
-addDoc, 
-serverTimestamp 
-} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
-
-const app = initializeApp({
-apiKey:"AIzaSyBdo7NO1PnAa90PhEhuzpllkB1ESGZu3J8",
-authDomain:"harry-undersand.firebaseapp.com",
-projectId:"harry-undersand"
-});
-
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-let currentUser = null;
-
-onAuthStateChanged(auth, user => {
-if(!user){
-window.location.href = "login.html";
-} else {
-currentUser = user;
-}
-});
-
-window.createOrder = async (service, pack, price) => {
-if(!currentUser) return;
-
-await addDoc(collection(db,"orders"),{
-userId: currentUser.uid,
-service: service,
-pack: pack,
-price: price,
-status: "En attente",
-createdAt: serverTimestamp()
-});
-
-alert("✅ Commande envoyée avec succès !");
-window.location.href = "dashboard.html";
-};
-</script>
 
 </body>
 </html>
