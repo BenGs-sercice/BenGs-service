@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Streaming Premium — Amateur De Fantaisie</title>
+<title>Streaming Premium — BenGs Services</title>
 
 <link rel="icon" type="image/svg+xml"
-href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⛩️</text></svg>">
+href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎬</text></svg>">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter;background:#0a0a0f;color:#fff}
+body{font-family:Inter;background:#0a0a0f;color:#fff;line-height:1.6}
 section{padding:5rem 1.5rem}
 .container{max-width:1200px;margin:auto}
 h1,h2,h3{font-weight:800}
@@ -25,6 +25,7 @@ border:1px solid rgba(139,92,246,.3);
 border-radius:18px;
 padding:26px;
 transition:.3s;
+text-align:center;
 }
 .card:hover{transform:translateY(-6px);border-color:#8b5cf6}
 .card i{font-size:2rem;color:#8b5cf6;margin-bottom:12px}
@@ -37,8 +38,11 @@ text-decoration:none;
 font-weight:600;
 background:linear-gradient(135deg,#8b5cf6,#7c3aed);
 color:white;
+cursor:pointer;
+transition:.25s;
 }
-.hero{text-align:center;padding-top:140px}
+.btn:hover{opacity:.85}
+.hero{text-align:center;padding-top:120px}
 .hero h1{font-size:3rem}
 .hero-buttons{margin-top:30px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 .btn-outline{
@@ -46,82 +50,61 @@ background:none;
 border:1px solid rgba(139,92,246,.4);
 }
 footer{text-align:center;padding:3rem;color:#7a7a9a}
+input,select,textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #8b5cf6;
+background:#0a0a0f;
+color:white;
+}
+textarea{resize:none}
 </style>
 </head>
 
 <body>
 
 <section class="hero">
-<h1>Streaming Premium & Anime</h1>
+<h1>Streaming Premium & Services Numériques</h1>
 <p>Netflix • Prime Video • MyCanal • Crunchyroll • IPTV • Packs Premium</p>
 
 <div class="hero-buttons">
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20commander%20un%20abonnement%20streaming.">Commander maintenant</a>
-<a class="btn btn-outline" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20un%20abonnement%20streaming%20personnalis%C3%A9.">Abonnement personnalisé</a>
-<button class="btn" onclick="openOrderForm('Netflix Premium')">
-Abonnement Netflix
-</button>
+<button class="btn" onclick="openOrderForm('Abonnement Streaming')">Commander maintenant</button>
+<button class="btn btn-outline" onclick="openOrderForm('Abonnement personnalisé')">Abonnement personnalisé</button>
 </div>
 </section>
 
 <section class="container">
-  <h2>🎬 Cinéma & Séries</h2>
+<h2>🎬 Cinéma & Séries</h2>
+<div class="grid">
 
-  <div class="grid">
+<div class="card">
+<i class="fas fa-video"></i>
+<h3>Netflix Premium</h3>
+<p>4 écrans • Ultra HD • Accès complet</p>
+<button class="btn" onclick="openOrderForm('Netflix Premium')">Commander</button>
+</div>
 
-    <!-- NETFLIX -->
-    <div class="card">
-      <i class="fas fa-video"></i>
-      <h3>Netflix Premium</h3>
-      <p>4 écrans • Ultra HD • Accès complet</p>
-      <button class="btn"
-        onclick="sendWhatsAppOrder(
-          'Netflix',
-          'Premium',
-          '5000 FCFA',
-          '4 écrans simultanés, qualité Ultra HD (4K), accès complet'
-        )">
-        Commander
-      </button>
-    </div>
+<div class="card">
+<i class="fas fa-video"></i>
+<h3>Prime Video</h3>
+<p>Films • Séries • Contenus exclusifs Amazon</p>
+<button class="btn" onclick="openOrderForm('Prime Video')">Commander</button>
+</div>
 
-    <!-- PRIME VIDEO -->
-    <div class="card">
-      <i class="fas fa-video"></i>
-      <h3>Prime Video</h3>
-      <p>Films • Séries • Contenus exclusifs Amazon</p>
-      <button class="btn"
-        onclick="sendWhatsAppOrder(
-          'Prime Video',
-          'Standard',
-          '3000 FCFA',
-          'Films et séries Amazon Prime, accès complet'
-        )">
-        Commander
-      </button>
-    </div>
-
-    <!-- CRUNCHYROLL (remplace Netflix en double) -->
-    <div class="card">
-      <i class="fas fa-video"></i>
-      <h3>Crunchyroll Premium</h3>
-      <p>Animes • Simulcast • Sans publicité</p>
-      <button class="btn"
-        onclick="sendWhatsAppOrder(
-          'Crunchyroll',
-          'Premium',
-          '3500 FCFA',
-          'Animes illimités, sans pub, épisodes en simulcast'
-        )">
-        Commander
-      </button>
-    </div>
+<div class="card">
+<i class="fas fa-dragon"></i>
+<h3>Crunchyroll Premium</h3>
+<p>Animes • Simulcast • Sans publicité</p>
+<button class="btn" onclick="openOrderForm('Crunchyroll Premium')">Commander</button>
+</div>
 
 <div class="card">
 <i class="fas fa-tv"></i>
 <h3>MyCanal</h3>
 <p>Canal+ Afrique, HD & Full HD</p>
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20commander%20MyCanal.">Commander</a>
+<button class="btn" onclick="openOrderForm('MyCanal')">Commander</button>
 </div>
 
 </div>
@@ -135,149 +118,7 @@ Abonnement Netflix
 <i class="fas fa-dragon"></i>
 <h3>Crunchyroll</h3>
 <p>Anime illimité sans pub</p>
-<a class="btn" href="https://wa.me/242066973413?text=Salut%20!%20Je%20veux%20un%20abonnement%20Crunchyroll.">Commander</a>
+<button class="btn" onclick="openOrderForm('Crunchyroll')">Commander</button>
 </div>
 
-<div class="card">
-<i class="fas fa-bolt"></i>
-<h3>Wakanim</h3>
-<p>Animes récents & HD</p>
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20Wakanim.">Commander</a>
-</div>
-
-</div>
-</section>
-
-<section class="container">
-<h2>📡 IPTV & VOD</h2>
-<div class="grid">
-<button class="btn"
-onclick="sendWhatsAppOrder({
-  service: 'IPTV',
-  pack: 'Premium',
-  price: 'Variable',
-  description: 'Accès IPTV avec chaînes TV, films, séries et sports. Compatible Smart TV, Android, PC.'
-})">
-Commander
-</button>
-
-<div class="card">
-<i class="fas fa-lock"></i>
-<h3>Contenu Adulte</h3>
-<p>Accès privé & sécurisé</p>
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20un%20acc%C3%A8s%20adulte.">Commander</a>
-</div>
-
-</div>
-</section>
-
-<section class="container">
-<h2>⭐ Pourquoi nous choisir ?</h2>
-<p>
-Activation rapide • Support WhatsApp • Stabilité • Sécurité • Abonnements fiables  
-<br><br>
-Une solution simple, rapide et professionnelle.
-</p>
-</section>
-
-<footer>
-© 2026 Amateur De Fantaisie — Streaming by Harry Undersand
-</footer>
-
-<script>
-const WHATSAPP_NUMBER = "242066973413";
-
-function sendWhatsAppOrder({service, pack, price, description}) {
-  const message = `
-Bonjour 👋,
-
-Je vous contacte depuis le site *Amateur De Fantaisie*.
-
-📦 *Service choisi* : ${service}
-⭐ *Offre / Pack* : ${pack}
-💰 *Prix* : ${price}
-
-📝 *Détails de l’offre* :
-${description}
-
-🔐 Je souhaite :
-- connaître la procédure d’activation
-- les moyens de paiement disponibles
-- le délai de mise en service
-
-Merci de me recontacter dès que possible 🙏
-`;
-
-  const url =
-    "https://wa.me/" +
-    WHATSAPP_NUMBER +
-    "?text=" +
-    encodeURIComponent(message);
-
-  window.open(url, "_blank");
-}
-</script>
-
-<script>
-let selectedService = "";
-
-function openOrderForm(service) {
-  selectedService = service;
-  document.getElementById("serviceInput").value = service;
-  document.getElementById("orderModal").style.display = "block";
-}
-
-function closeOrderForm() {
-  document.getElementById("orderModal").style.display = "none";
-}
-
-function confirmOrder() {
-  const duration = document.getElementById("duration").value;
-  const details = document.getElementById("details").value;
-
-  const message = `
-Bonjour 👋,
-
-Je souhaite commander :
-
-📦 Service : ${selectedService}
-⏳ Durée : ${duration}
-
-📝 Détails :
-${details || "Aucun détail supplémentaire"}
-
-Merci de me confirmer la disponibilité et la procédure 🙏
-`;
-
-  window.open(
-    "https://wa.me/242066973413?text=" +
-      encodeURIComponent(message),
-    "_blank"
-  );
-
-  closeOrderForm();
-}
-</script>
-
-<div id="orderModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:999;">
-  <div style="background:#141425; max-width:420px; margin:10% auto; padding:24px; border-radius:16px;">
-    <h3>📦 Détails de la commande</h3>
-
-    <input id="serviceInput" type="text" disabled style="width:100%;margin-top:10px;padding:10px">
-
-    <select id="duration" style="width:100%;margin-top:10px;padding:10px">
-      <option>1 mois</option>
-      <option>3 mois</option>
-      <option>6 mois</option>
-    </select>
-
-    <textarea id="details" placeholder="Ex : nombre d’écrans, urgence, questions..."
-      style="width:100%;margin-top:10px;padding:10px"></textarea>
-
-    <button class="btn" onclick="confirmOrder()">Envoyer sur WhatsApp</button>
-    <button class="btn btn-outline" onclick="closeOrderForm()">Annuler</button>
-  </div>
-</div>
-
-</body>
-</html>
+<div class="card
