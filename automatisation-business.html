@@ -95,62 +95,12 @@ textarea{min-height:120px;resize:vertical}
 
 /* FOOTER */
 footer{text-align:center;padding:3rem;color:#777}
-
-/* ===== MODAL LOGIN ===== */
-#loginModal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.7);
-  backdrop-filter:blur(6px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-
-.modal-box{
-  background:#0f0f1e;
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:38px;
-  max-width:420px;
-  width:92%;
-  text-align:center;
-  animation:pop .3s ease;
-}
-
-@keyframes pop{
-  from{transform:scale(.85);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
-
-.modal-box i{
-  font-size:2.8rem;
-  color:var(--violet);
-  margin-bottom:14px;
-}
-
-.google-btn{
-  margin-top:22px;
-  width:100%;
-  padding:14px;
-  border-radius:30px;
-  border:none;
-  background:#fff;
-  color:#111;
-  font-weight:700;
-  cursor:pointer;
-}
-.google-btn i{margin-right:8px}
-
-/* HIDE */
 .hidden{display:none}
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
   <h1>Commande & Demande de Devis</h1>
   <p>
@@ -160,7 +110,6 @@ footer{text-align:center;padding:3rem;color:#777}
   </p>
 </section>
 
-<!-- COMMANDE RAPIDE -->
 <section class="container">
 <h2>🚀 Commande rapide — Streaming & Premium</h2>
 <p>Cliquez sur un service pour commander immédiatement via WhatsApp.</p>
@@ -171,40 +120,35 @@ footer{text-align:center;padding:3rem;color:#777}
 <i class="fas fa-film"></i>
 <h3>Netflix</h3>
 <p>Abonnements HD, Full HD, 4K, multi-écrans.</p>
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20commander%20un%20abonnement%20Netflix." target="_blank">Commander</a>
+<a class="btn" href="https://wa.me/056018886?text=Bonjour%20!%20Je%20souhaite%20commander%20un%20abonnement%20Netflix." target="_blank">Commander</a>
 </div>
 
 <div class="card">
 <i class="fas fa-tv"></i>
 <h3>Prime Video</h3>
 <p>Films, séries et contenus exclusifs Amazon.</p>
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20commander%20un%20abonnement%20Prime%20Video." target="_blank">Commander</a>
+<a class="btn" href="https://wa.me/056018886?text=Bonjour%20!%20Je%20souhaite%20commander%20un%20abonnement%20Prime%20Video." target="_blank">Commander</a>
 </div>
 
 <div class="card">
 <i class="fas fa-dragon"></i>
 <h3>Crunchyroll / Wakanim</h3>
 <p>Animes premium, HD, accès complet.</p>
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20commander%20un%20abonnement%20Anime%20(Crunchyroll/Wakanim)." target="_blank">Commander</a>
+<a class="btn" href="https://wa.me/056018886?text=Bonjour%20!%20Je%20souhaite%20commander%20un%20abonnement%20Anime%20(Crunchyroll/Wakanim)." target="_blank">Commander</a>
 </div>
 
 <div class="card">
 <i class="fas fa-video"></i>
 <h3>MyCanal</h3>
 <p>Canal+ Afrique, sport, films et séries.</p>
-<a class="btn" href="https://wa.me/242066973413?text=Bonjour%20!%20Je%20souhaite%20commander%20un%20abonnement%20MyCanal." target="_blank">Commander</a>
+<a class="btn" href="https://wa.me/056018886?text=Bonjour%20!%20Je%20souhaite%20commander%20un%20abonnement%20MyCanal." target="_blank">Commander</a>
 </div>
 
 </div>
 </section>
 
-<!-- DEVIS -->
 <section class="container">
 <h2>📄 Demande de devis personnalisé</h2>
-<p>
-Expliquez-nous votre besoin. Nous analyserons votre projet et
-vous proposerons la meilleure solution adaptée à votre budget.
-</p>
 
 <form onsubmit="sendDevis();return false;">
 
@@ -239,46 +183,6 @@ vous proposerons la meilleure solution adaptée à votre budget.
 </form>
 </section>
 
-<!-- TRUST -->
-<section class="container trust">
-<h2>🤝 Pourquoi nous faire confiance ?</h2>
-<p>
-Nous accompagnons particuliers, créateurs et entreprises dans leur transformation digitale
-grâce à des solutions fiables, sécurisées et évolutives.
-</p>
-<p>
-Notre approche repose sur la transparence, la performance, la sécurité
-et un support humain constant avant, pendant et après la livraison.
-</p>
-</section>
-
-<h2>Passer une commande</h2>
-
-<input id="nom" placeholder="Votre nom">
-<input id="email" placeholder="Votre email">
-<textarea id="message" placeholder="Détails supplémentaires"></textarea>
-
-<h3>Streaming</h3>
-<button onclick="envoyerCommande('Netflix','Premium')">
-Netflix Premium
-</button>
-
-<button onclick="envoyerCommande('Crunchyroll','Standard')">
-Crunchyroll
-</button>
-
-<h3>Chatbot</h3>
-<button onclick="envoyerCommande('Chatbot WhatsApp','Business')">
-Chatbot WhatsApp
-</button>
-
-<h3>Hébergement</h3>
-<button onclick="envoyerCommande('Hébergement','Starter')">
-Starter
-</button>
-
-<script src="js/sheets.js"></script>
-
 <footer>© 2026 Amateur De Fantaisie — Harry Undersand</footer>
 
 <script>
@@ -294,18 +198,16 @@ Plateforme : ${p}%0A
 Budget : ${b}%0A
 Détails : ${m}`;
 
-window.open(`https://wa.me/242066973413?text=${text}`,"_blank");
+window.open(`https://wa.me/056018886?text=${text}`,"_blank");
 }
-</script>
-
-<script>
-const observer=new IntersectionObserver(e=>{
-e.forEach(el=>{
-if(el.isIntersecting)el.target.classList.add("active");
-});
-},{threshold:0.15});
-document.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
 </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
